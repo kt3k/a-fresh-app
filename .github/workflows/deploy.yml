@@ -25,11 +25,11 @@ jobs:
           deno-version: v1.x
 
       - name: Build step
-        run: "deno task build"
+        run: "hi"
 
       - name: Upload to Deno Deploy
         uses: denoland/deployctl@v1
         with:
-          project: "yoshiyahino-a-fresh-app-20"
+          project: "a-fresh-app-36"
           entrypoint: "main.ts"
           root: "."
