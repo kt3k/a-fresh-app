@@ -18,18 +18,3 @@ jobs:
     steps:
       - name: Clone repository
         uses: actions/checkout@v3
-
-      - name: Install Deno
-        uses: denoland/setup-deno@v1
-        with:
-          deno-version: v1.x
-
-      - name: Build step
-        run: "hi"
-
-      - name: Upload to Deno Deploy
-        uses: denoland/deployctl@v1
-        with:
-          project: "a-fresh-app-36"
-          entrypoint: "main.ts"
-          root: "."
