@@ -24,8 +24,16 @@ jobs:
         with:
           deno-version: v1.x
 
+      - name: Install Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: lts/*
+
+      - name: Install step
+        run: "foo"
+
       - name: Build step
-        run: "deno task build"
+        run: "bar"
 
       - name: Upload to Deno Deploy
         uses: denoland/deployctl@v1
