@@ -9,7 +9,7 @@ jobs:
   deploy:
     name: Deploy
     runs-on: ubuntu-latest
-    env: { DEPLOY_API_ENDPOINT: "https://deno-local.com" }
+    env: { DEPLOY_API_ENDPOINT: "https://deno-staging.com" }
 
     permissions:
       id-token: write # Needed for auth with Deno Deploy
@@ -22,14 +22,16 @@ jobs:
       - name: Install Deno
         uses: denoland/setup-deno@v2
         with:
-          deno-version: v2.x
+          deno-version: v1.x
 
       - name: Build step
-        run: "deno task build && echo hi"
+        run: "deno task build"
 
       - name: Upload to Deno Deploy
         uses: denoland/deployctl@v1
         with:
-          project: "yoshiyahino-a-fresh-app-63"
+          project: "yoshiyahino-a-fresh-app-28"
           entrypoint: "main.ts"
           root: "."
+          
+          
